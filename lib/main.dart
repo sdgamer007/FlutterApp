@@ -1,6 +1,7 @@
-// ignore_for_file: deprecated_member_use, prefer_const_constructors
+// ignore_for_file: deprecated_member_use, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,11 +14,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-      questionIndex += 1;
+      _questionIndex += 1;
     });
   }
 
@@ -33,12 +34,13 @@ class _MyAppState extends State<MyApp> {
           title: const Text('My fist App'),
         ),
         body: Column(
+          // ignore: duplicate_ignore
           children: [
             // ignore: prefer_const_constructors
-            Text(questions[questionIndex]),
+            Question(questions[_questionIndex]),
             RaisedButton(
               // ignore: avoid_print
-              onPressed: answerQuestion,
+              onPressed: _answerQuestion,
               child: Text('Answer 1'),
             ),
             RaisedButton(
