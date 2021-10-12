@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,21 +39,9 @@ class _MyAppState extends State<MyApp> {
           children: [
             // ignore: prefer_const_constructors
             Question(questions[_questionIndex]),
-            RaisedButton(
-              // ignore: avoid_print
-              onPressed: _answerQuestion,
-              child: Text('Answer 1'),
-            ),
-            RaisedButton(
-              // ignore: avoid_print
-              onPressed: () => print('ans 2'),
-              child: Text('Answer 2'),
-            ),
-            RaisedButton(
-              // ignore: avoid_print
-              onPressed: () => print('ans 3'),
-              child: Text('Answer 3'),
-            )
+            Answer(),
+            Answer(),
+            Answer(),
           ],
         ),
       ),
